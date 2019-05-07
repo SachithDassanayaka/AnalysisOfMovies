@@ -1,0 +1,101 @@
+Skip to content
+ 
+Search or jump to…
+
+Pull requests
+Issues
+Marketplace
+Explore
+ 
+@SachithDassanayaka 
+Learn Git and GitHub without any code!
+Using the Hello World guide, you’ll start a branch, write comments, and open a pull request.
+
+Read the guide
+
+ Watch 0
+ Star 0  Fork 0 SachithDassanayaka/sachithdassanayaka.github.io
+ Code  Issues 0  Pull requests 0  Projects 0  Wiki  Insights  Settings
+Branch: master 
+sachithdassanayaka.github.io/index.html
+Find file Copy path
+@SachithDassanayaka SachithDassanayaka Update index.html
+25c9221 on Mar 27
+1 contributor
+72 lines (57 sloc)  1.5 KB
+RawBlameHistory
+    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>UFO Shapes</title>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v0.3.min.js"></script>
+
+
+    <style>
+        body { font: 12px Arial;}
+        path {
+            stroke: steelblue;
+            stroke-width: 2;
+            fill: none;
+        }
+        .axis path,
+        .axis line {
+            fill: none;
+            stroke: grey;
+            stroke-width: 1;
+            shape-rendering: crispEdges;
+        }
+        .container .header {
+            height: 65px;
+        }
+        .container .header .text {
+            float: left;
+            vertical-align: bottom;
+            font-family: sans-serif;
+            font-size: x-large;
+        }
+    </style>
+
+
+</head>
+<div id="container" class="container">
+    <div class="header">
+        <div class="header text">Analysis of Popular Movies in 2014 and 2015</div>
+    </div>
+</div>
+<body>
+<p>
+    This graph shows the information
+</p>
+<script>
+        var parseTime = d3.timeParse("%Y");
+        bisectDate = d3.bisector(function(d) { return d.year; }).left;
+        //Read the data
+        d3.csv("cross.xlsx", function(error, data) {
+            if (error) throw error;
+            //format data
+            data.forEach(function (d) {
+                d.City = parseTime(+d.City);
+                d.Duration = +d.Duration;
+            });
+            console.log(data);
+    });
+</script>
+
+</body>
+</html>
+© 2019 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
